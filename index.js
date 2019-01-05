@@ -22,9 +22,9 @@ function getRepoNameAndURL(responseJson) {
     return (`<div>URL :<a href="${key.url}">${key.url}</a></div>
     <div> name : ${key.name}</div>`);
   });
-  if (responseJson.message == "(Not Found)") {
+  if (responseJson.code == "Not Found") {
     
-    $(".result").append("user not found");
+    $(".result").html(responseJson.message);
   } 
   
   else {
